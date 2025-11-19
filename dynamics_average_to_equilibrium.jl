@@ -15,7 +15,7 @@ gr()
 const PAL = ColorSchemes.seaborn_bright6.colors
 default(
     tickfontsize   = 5,
-    linewidth      = 2.5,
+    linewidth      = 1,
     xguidefontsize = 5,
     yguidefontsize = 5
 )
@@ -118,7 +118,7 @@ p1 = plot(
 )
 for j in 1:size(X1, 2)
     c = PAL[(j - 1) % length(PAL) + 1]
-    plot!(p1, t1, X1[:, j]; color = c, alpha = 0.4, label = "", linewidth=1)
+    plot!(p1, t1, X1[:, j]; color = c, alpha = 0.25, label = "", linewidth=0.75)
     plot!(p1, t1, cum1[:, j]; color = c, label = "")
     hline!(p1, [eq1[j]]; color = c, label = "", linestyle = :dot)
 end
@@ -137,7 +137,7 @@ p2 = plot(
 )
 for j in 1:size(X3, 2)
     c = PAL[(j - 1) % length(PAL) + 1]
-    plot!(p2, t3, X3[:, j]; color = c, alpha = 0.4, label = "", linewidth=1)
+    plot!(p2, t3, X3[:, j]; color = c, alpha = 0.25, label = "", linewidth=0.75)
     plot!(p2, t3, cum3[:, j]; color = c, label = "")
     hline!(p2, [eq3[j]]; color = c, linestyle = :dot, label = "")
 end
